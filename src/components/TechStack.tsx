@@ -33,6 +33,48 @@ function AnimatedCounter({ target, isInView }: { target: number; isInView: boole
 
 // ── Skill Pill with proficiency bar ────────────────────────────────────────────
 
+// Map skill names to SVG filenames in public/dark
+const skillToSvg: Record<string, string> = {
+  React: "react.svg",
+  Angular: "angular.svg",
+  AngularJS: "angular.svg",
+  TypeScript: "typescript.svg",
+  JavaScript: "js.svg",
+  "Chart.js": "chartjs.svg",
+  Tailwind: "tailwind.svg",
+  Bootstrap: "bootstrap.svg",
+  Figma: "figma.svg",
+  Storybook: "storybook.svg",
+  HTML5: "html.svg",
+  CSS3: "css.svg",
+  "ASP.NET Web API": "dotnet.svg",
+  "Ruby on Rails": "ruby.svg",
+  GraphQL: "graphql.svg",
+  Apollo: "apollo.svg",
+  "SQL Server": "sqlserver.svg",
+  PostgreSQL: "postgresql.svg",
+  Elasticsearch: "elasticsearch.svg",
+  Redis: "redis.svg",
+  Sidekiq: "sidekiq.svg",
+  "Azure Service Bus": "azure.svg",
+  Kubernetes: "kubernetes.svg",
+  "GitHub Actions": "github-actions.svg",
+  "Infrastructure as Code": "terraform.svg",
+  "CI/CD": "circleci.svg",
+  Docker: "docker.svg",
+  DSA: "c.svg",
+  "System Design": "system-design.svg",
+  Git: "git.svg",
+  Python: "python.svg",
+  "Machine Learning": "pytorch.svg",
+  Cypress: "cypress.svg",
+  "React Testing Library": "react.svg",
+  Vitest: "vitest.svg",
+  "Responsive Design": "css-tricks.svg",
+  "Critical Thinking": "brain.svg",
+  "Problem Solving": "brain.svg",
+};
+
 function SkillPill({
   skill,
   index,
@@ -42,6 +84,7 @@ function SkillPill({
   index: number;
   isInView: boolean;
 }) {
+  const svgFile = skillToSvg[skill.name];
   return (
     <motion.div
       className="group relative"
@@ -73,21 +116,28 @@ function SkillPill({
         }}
       >
         <div className="flex items-center gap-3">
-          {/* Color dot */}
-          <div
-            className="h-2.5 w-2.5 flex-shrink-0 rounded-full transition-all duration-300 group-hover:scale-125"
-            style={{
-              backgroundColor: skill.color,
-              boxShadow: `0 0 8px ${skill.color}40`,
-            }}
-          />
-
+          {/* Icon or color dot */}
+          {svgFile ? (
+            <img
+              src={`/dark/${svgFile}`}
+              alt={skill.name}
+              className="h-5 w-5 flex-shrink-0 rounded-md bg-white/10 p-0.5"
+              style={{ backgroundColor: skill.color + '10' }}
+            />
+          ) : (
+            <div
+              className="h-2.5 w-2.5 flex-shrink-0 rounded-full transition-all duration-300 group-hover:scale-125"
+              style={{
+                backgroundColor: skill.color,
+                boxShadow: `0 0 8px ${skill.color}40`,
+              }}
+            />
+          )}
           {/* Name */}
           <span className="flex-1 text-sm font-medium text-white/60 transition-colors duration-300 group-hover:text-white/90">
             {skill.name}
           </span>
         </div>
-
         {/* Hover gradient overlay */}
         <div
           className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const [isPointer, setIsPointer] = useState(false);
@@ -11,46 +11,53 @@ export default function CustomCursor() {
   const springConfig = { damping: 25, stiffness: 400, mass: 0.5 };
   const x = useSpring(cursorX, springConfig);
   const y = useSpring(cursorY, springConfig);
+  const pointerRef = useRef(false);
+  const coordsRef = useRef({ x: -100, y: -100 });
 
   useEffect(() => {
-    let rafId: number | null = null;
-    let lastPointerCheck = 0;
+    let running = true;
+    function pointerLoop() {
+      if (!running) return;
+      const { x, y } = coordsRef.current;
+      const el = document.elementFromPoint(x, y);
+      let pointer = false;
+      if (el) {
+        pointer =
+          el.tagName === "A" ||
+          el.tagName === "BUTTON" ||
+          el.closest("a") !== null ||
+          el.closest("button") !== null ||
+          (el as HTMLElement).style?.cursor === "pointer" ||
+          (el as HTMLElement).style?.cursor === "grab";
+      }
+      if (pointerRef.current !== pointer) {
+        pointerRef.current = pointer;
+        setIsPointer(pointer);
+      }
+      requestAnimationFrame(pointerLoop);
+    }
+    requestAnimationFrame(pointerLoop);
+    return () => {
+      running = false;
+    };
+  }, []);
 
+  useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
+      coordsRef.current = { x: e.clientX, y: e.clientY };
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
       setIsVisible(true);
-
-      // Throttle pointer style check to ~10fps instead of every mousemove
-      const now = performance.now();
-      if (now - lastPointerCheck < 100) return;
-      lastPointerCheck = now;
-
-      const el = document.elementFromPoint(e.clientX, e.clientY);
-      if (el) {
-        setIsPointer(
-          el.tagName === "A" ||
-            el.tagName === "BUTTON" ||
-            el.closest("a") !== null ||
-            el.closest("button") !== null ||
-            (el as HTMLElement).style?.cursor === "pointer" ||
-            (el as HTMLElement).style?.cursor === "grab"
-        );
-      }
     };
-
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
-
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
-      if (rafId) cancelAnimationFrame(rafId);
     };
   }, [cursorX, cursorY]);
 

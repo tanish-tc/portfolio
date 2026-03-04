@@ -251,9 +251,10 @@ export default function ProjectArchive() {
           ))}
         </motion.div>
 
-        {/* Masonry Grid */}
+        {/* Masonry Grid (CSS grid, no overlap) */}
         <motion.div
-          className="relative z-10 columns-1 gap-6 sm:columns-2 lg:columns-3"
+          className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          style={{ gridAutoFlow: 'row dense' }}
           layout
         >
           <AnimatePresence mode="popLayout">
