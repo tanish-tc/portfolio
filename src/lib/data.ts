@@ -57,8 +57,8 @@ export const stickers: Sticker[] = [
     color: "#f59e0b", // Amber
     bg: "linear-gradient(135deg, #fef3c7, #fde68a)",
     rotation: -8,
-    x: 12,
-    y: 15,
+    x: 4,
+    y: 12,
     scale: 1.15,
   },
   {
@@ -68,8 +68,8 @@ export const stickers: Sticker[] = [
     color: "#10b981", // Emerald
     bg: "linear-gradient(135deg, #d1fae5, #a7f3d0)",
     rotation: -5,
-    x: 5,
-    y: 65,
+    x: 8,
+    y: 55,
     scale: 1.1,
   },
   {
@@ -91,7 +91,7 @@ export const stickers: Sticker[] = [
     bg: "linear-gradient(135deg, #e0e7ff, #c7d2fe)",
     rotation: -2,
     x: 25,
-    y: 35,
+    y: 33,
     scale: 1,
   },
 {
@@ -124,7 +124,7 @@ export const achievements: Achievement[] = [
     color: "#dc2626", // Aggressive Red
     emoji: "🏆",
     x: 35,
-    y: 5,
+    y: 7,
   },
   {
     id: "chair-research",

@@ -236,6 +236,7 @@ export default function HeroCanvas() {
       id="hero"
       className="relative min-h-screen overflow-hidden"
       style={{
+        paddingTop: "2rem",
         background: "#f0f4f8",
       }}
     >
