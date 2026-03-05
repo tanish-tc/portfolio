@@ -408,6 +408,68 @@ export const archiveProjects: Project[] = [
       { label: "GitHub", url: "#" },
     ],
   },
+  {
+    id: "project-argus",
+    title: "Project Argus",
+    subtitle: "Multi-Agent Procedural Generation Engine",
+    year: "2024",
+    category: "AI Architecture",
+    description:
+      "Engineered a dynamic, multi-agent simulation engine powered by the Gemini API. Bypassed standard chatbot limitations by implementing long-term vector memory (FAISS) for autonomous NPCs. Architected a mathematical semantic contradiction detection system that flags narrative divergences in real-time, tied directly to dynamic emotional state machines and ElevenLabs voice synthesis for procedural gameplay generation.",
+    technologies: ["FAISS Vector DB", "Gemini API", "State Machines", "ElevenLabs TTS", "Multi-Agent Systems"],
+    gradient: "from-slate-700 to-black",
+    color: "#64748b",
+    links: [
+      { label: "GitHub", url: "#" },
+      { label: "Architecture Demo", url: "#" },
+    ],
+  },
+  {
+    id: "marketique-saas",
+    title: "Marketique",
+    subtitle: "Autonomous Social Media Infrastructure",
+    year: "2024",
+    category: "Full Stack SaaS",
+    description:
+      "Architected a serverless, zero-touch publishing pipeline for Instagram. Engineered secure OAuth token lifecycle management and orchestrated database-level cron jobs (pg_cron) to trigger Supabase Edge Functions. The system autonomously generates context-aware content via LLMs and executes scheduled Graph API mutations without human intervention, scaling effortlessly across multi-tenant environments.",
+    technologies: ["Supabase Edge Functions", "pg_cron", "Instagram Graph API", "React", "OAuth Security"],
+    gradient: "from-violet-600 to-purple-900",
+    color: "#8b5cf6",
+    links: [
+      { label: "Live App", url: "#" },
+      { label: "GitHub", url: "#" },
+    ],
+  },
+  {
+    id: "geo-estate",
+    title: "Geospatial Real Estate Engine",
+    subtitle: "High-Performance Geospatial Data Sync",
+    year: "2023",
+    category: "Web Platforms",
+    description:
+      "Built a high-performance property platform capable of handling complex geographical datasets (KML/GeoJSON). Integrated Mapbox with custom rendering logic to display dense property markers without dropping frames. Managed complex client-side state with Zustand and ensured absolute data consistency via real-time WebSocket synchronization through Supabase.",
+    technologies: ["React", "TypeScript", "Zustand", "Mapbox", "Supabase Realtime"],
+    gradient: "from-sky-500 to-blue-900",
+    color: "#0ea5e9",
+    links: [
+      { label: "GitHub", url: "#" },
+    ],
+  },
+  {
+    id: "fitmapp-telemetry",
+    title: "Fitmapp Biometrics",
+    subtitle: "Predictive Biometric Analytics Engine",
+    year: "2023",
+    category: "Data Analytics",
+    description:
+      "Developed a robust biometric telemetry tracking system. Bypassed simple data logging by engineering an analytical layer that processes raw user fitness metrics to generate predictive insights and personalized recommendations. Implemented strict Row Level Security (RLS) in the database to ensure absolute privacy of sensitive health data at scale.",
+    technologies: ["React", "Vite", "Supabase RLS", "Predictive Analytics"],
+    gradient: "from-emerald-500 to-teal-900",
+    color: "#10b981",
+    links: [
+      { label: "GitHub", url: "#" },
+    ],
+  },
 ];
 
 // ── Tech Stack ─────────────────────────────────────────────────────────────────

@@ -18,6 +18,7 @@ function ProjectCard({
   onSelect: (p: Project) => void;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [hasMedia, setHasMedia] = useState(true);
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-50px" });
 
@@ -55,16 +56,28 @@ function ProjectCard({
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
+        {/* Media (gif/video) - load if available */}
+        <div className="absolute inset-0 z-0">
+          {hasMedia && (
+            <img
+              src={`/gifs/${encodeURIComponent(project.id)}.gif`}
+              alt={`${project.title} preview`}
+              className="w-full h-full object-cover"
+              onError={() => setHasMedia(false)}
+            />
+          )}
+        </div>
+
         {/* Gradient background */}
         <div
           className={cn(
-            "absolute inset-0 bg-gradient-to-br opacity-40 transition-opacity duration-500 group-hover:opacity-70",
+            "absolute inset-0 z-10 bg-gradient-to-br opacity-40 transition-opacity duration-500 group-hover:opacity-70",
             project.gradient
           )}
         />
 
         {/* Content overlay */}
-        <div className="relative z-10 flex h-full flex-col justify-between p-6">
+        <div className="relative z-20 flex h-full flex-col justify-between p-6">
           {/* Top: Category & Year */}
           <div className="flex items-start justify-between">
             <motion.span
