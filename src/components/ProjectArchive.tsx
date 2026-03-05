@@ -198,11 +198,11 @@ export default function ProjectArchive() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="font-mono text-sm uppercase tracking-[0.3em] text-white/30">
-            // all projects
+            // complete portfolio
           </h2>
           <div className="flex items-end gap-4">
             <h3 className="mt-2 font-mono text-4xl font-black tracking-tight text-white sm:text-5xl">
-              The Archive
+              The Innovation Archive
             </h3>
             <motion.span
               className="mb-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-white/30"
@@ -214,8 +214,7 @@ export default function ProjectArchive() {
             </motion.span>
           </div>
           <p className="mt-3 max-w-lg text-sm text-white/30">
-            A grid of everything I&apos;ve built. Click any card to dive deeper
-            into the technical details.
+            Browse the full spectrum of my engineering journey—from ambitious prototypes to production systems at scale. Each project is a story of technical rigor, creative vision, and real-world impact.
           </p>
         </motion.div>
 

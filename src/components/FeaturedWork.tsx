@@ -95,23 +95,22 @@ export default function FeaturedWork() {
           viewport={{ once: true }}
         >
           <h2 className="font-mono text-sm uppercase tracking-[0.3em] text-white/30">
-            // featured work
+            // flagship creations
           </h2>
           <div className="flex items-end justify-between">
-            <h3 className="mt-2 font-mono text-4xl font-black tracking-tight text-white sm:text-5xl">
-              The Assembly Line
+            <h3 className="font-mono text-4xl font-black tracking-tight text-white sm:text-5xl">
+              Engineering the Future
             </h3>
-            {/* Auto-play toggle */}
-            <motion.button
-              className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 font-mono text-xs text-white/40 transition-all hover:border-white/20 hover:text-white/60"
-              onClick={() => setIsAutoPlaying((prev) => !prev)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {isAutoPlaying ? <Pause size={12} /> : <Play size={12} />}
-              {isAutoPlaying ? "Pause" : "Play"}
-            </motion.button>
+            <div className="mb-1 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5">
+              <span className="font-mono text-lg font-bold text-white/60">
+                {featuredProjects.length}
+              </span>
+              <span className="font-mono text-xs text-white/30">flagship</span>
+            </div>
           </div>
+          <p className="mt-3 max-w-lg text-sm text-white/30">
+            Explore a handpicked selection of my most transformative projects—each a testament to technical excellence, creative problem-solving, and measurable impact. These are not just builds; they are blueprints for the future.
+          </p>
         </motion.div>
 
         {/* Carousel */}

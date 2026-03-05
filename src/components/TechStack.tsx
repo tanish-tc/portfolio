@@ -191,11 +191,11 @@ export default function TechStack() {
         transition={{ duration: 0.8 }}
       >
         <h2 className="font-mono text-sm uppercase tracking-[0.3em] text-white/30">
-          // tech stack
+          // technical mastery
         </h2>
         <div className="mt-2 flex items-end gap-4">
           <h3 className="font-mono text-4xl font-black tracking-tight text-white sm:text-5xl">
-            The Engine Room
+            My Engineering Arsenal
           </h3>
           <motion.div
             className="mb-1 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5"
@@ -210,8 +210,7 @@ export default function TechStack() {
           </motion.div>
         </div>
         <p className="mt-3 max-w-lg text-sm text-white/30">
-          The tools, languages, and frameworks I use to build, ship, and
-          scale. Organized by domain.
+          Every tool here is a brushstroke in my craft—chosen for its power to create, scale, and inspire. From AI frameworks to cloud-native stacks, I wield these technologies to architect solutions that endure and delight.
         </p>
       </motion.div>
 

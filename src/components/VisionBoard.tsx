@@ -233,14 +233,13 @@ export default function VisionBoard() {
         transition={{ duration: 0.8 }}
       >
         <h2 className="font-mono text-sm uppercase tracking-[0.3em] text-black/30">
-          // achievements & experience
+          // signature achievements
         </h2>
         <h3 className="mt-2 font-mono text-4xl font-black tracking-tight text-black/80 sm:text-5xl">
-          The Vision Board
+          A Legacy of Impact
         </h3>
         <p className="mt-3 max-w-lg font-mono text-sm text-black/40">
-          Drag these around. A curated board of hackathon wins, patents,
-          and engineering milestones — scattered like ideas on a whiteboard.
+          Explore a curated showcase of my most defining moments—hackathon triumphs, patents, and engineering breakthroughs. Each milestone is a testament to relentless curiosity, technical mastery, and a drive to shape the future of technology.
         </p>
       </motion.div>
 

@@ -164,9 +164,9 @@ function MagneticTitle({
 
 function TypingSubtitle() {
   const roles = [
-    "Full-Stack Engineer",
-    "AI/ML Explorer",
-    "Open Source Builder",
+    "AI Architect & Innovator",
+    "Full Stack Visionary",
+    "Mentor & Technical Leader",
     "Systems Thinker",
   ];
   const [roleIdx, setRoleIdx] = useState(0);
@@ -196,7 +196,7 @@ function TypingSubtitle() {
 
   return (
     <motion.p
-      className="mx-auto mt-8 max-w-xl font-mono text-base text-black/50 sm:text-lg"
+      className="mx-auto mt-8 max-w-2xl font-mono text-lg text-black/60 dark:text-neutral-200 sm:text-xl"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 2, duration: 0.8 }}
@@ -289,7 +289,7 @@ export default function HeroCanvas() {
               <span className="absolute inset-0 animate-ping rounded-full bg-green-500 opacity-75" />
             </span>
             <span className="text-black/60">
-              <span className="text-green-600 font-semibold">~</span> available for work
+              <span className="text-green-600 font-semibold">~</span> available for world-class impact
             </span>
           </motion.div>
 
@@ -313,6 +313,14 @@ export default function HeroCanvas() {
             className="mt-1 font-mono text-7xl font-black tracking-tighter text-black sm:text-8xl md:text-[10rem] md:leading-none"
             delayBase={1.2}
           />
+
+          {/* Professor-level intro */}
+          <div className="mx-auto mt-8 max-w-2xl text-base md:text-lg text-neutral-700 dark:text-neutral-300">
+            <span>
+              Welcome — I’m Tanish, your next transformative hire. Architect of intelligent systems. Builder of seamless, scalable products. Leader in AI and Full Stack innovation.<br /><br />
+              My work fuses deep technical mastery with creative vision, delivering solutions that redefine what’s possible. If you seek a developer who elevates teams, mentors peers, and engineers the future—let’s connect.
+            </span>
+          </div>
 
           {/* Typing subtitle */}
           <TypingSubtitle />
