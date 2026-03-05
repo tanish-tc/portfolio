@@ -114,7 +114,7 @@ export default function FeaturedWork() {
         </motion.div>
 
         {/* Carousel */}
-        <div className="flex min-h-[80vh] items-center">
+        <div className="flex min-h-[80vh] items-center" style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
           <div className="grid w-full grid-cols-1 gap-8 px-8 lg:grid-cols-2 lg:gap-16 lg:px-16">
             {/* Left: Text content */}
             <AnimatePresence mode="wait">
@@ -151,6 +151,7 @@ export default function FeaturedWork() {
                   className="text-6xl font-black tracking-tight text-white sm:text-7xl lg:text-8xl"
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
+                  style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
                   {project.title}
@@ -243,6 +244,7 @@ export default function FeaturedWork() {
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 exit={{ opacity: 0, scale: 0.9, rotateY: 15 }}
                 transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                style={{marginTop: 40}}
               >
                 {/* Glow background */}
                 <motion.div

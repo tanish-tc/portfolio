@@ -316,8 +316,8 @@ export default function HeroCanvas() {
           />
 
           {/* Professor-level intro */}
-          <div className="mx-auto mt-8 max-w-2xl text-base md:text-lg text-neutral-700 dark:text-neutral-300">
-            <span>
+          <div className="mx-auto mt-8 max-w-2xl text-base md:text-lg text-neutral-700 dark:text-neutral-300" >
+            <span style={{ fontWeight: 100 }}>
               Welcome — I’m Tanish, your next transformative hire. Architect of intelligent systems. Builder of seamless, scalable products. Leader in AI and Full Stack innovation.<br /><br />
               My work fuses deep technical mastery with creative vision, delivering solutions that redefine what’s possible. If you seek a developer who elevates teams, mentors peers, and engineers the future—let’s connect.
             </span>
