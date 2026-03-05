@@ -46,153 +46,164 @@ export interface Sticker {
 
 // ── Hero Stickers ──────────────────────────────────────────────────────────────
 
+// ── Hero Stickers (The First Impression) ───────────────────────────────────────
+// These float around "WELCOME TO TANISH'S TERMINAL". 
+// They are instant, 1-second visual flexes.
 export const stickers: Sticker[] = [
   {
-    id: "ai-research",
-    label: "AI Pioneer",
-    emoji: "🧠",
-    color: "#8b5cf6",
-    bg: "linear-gradient(135deg, #ede9fe, #ddd6fe)",
+    id: "nyc-streak",
+    label: "Unbeaten in NYC: 4 Wins",
+    emoji: "🗽",
+    color: "#f59e0b", // Amber
+    bg: "linear-gradient(135deg, #fef3c7, #fde68a)",
     rotation: -8,
-    x: 10,
-    y: 18,
-    scale: 1.1,
+    x: 12,
+    y: 15,
+    scale: 1.15,
   },
   {
-    id: "fullstack-leader",
-    label: "Full Stack Maestro",
-    emoji: "🧩",
-    color: "#06b6d4",
-    bg: "linear-gradient(135deg, #cffafe, #a5f3fc)",
-    rotation: 12,
-    x: 75,
-    y: 12,
-    scale: 1.1,
-  },
-  {
-    id: "systems-architect",
-    label: "Systems Architect",
-    emoji: "🛠️",
-    color: "#10b981",
+    id: "tech-stack",
+    label: "AI & Systems Architecture",
+    emoji: "⚙️",
+    color: "#10b981", // Emerald
     bg: "linear-gradient(135deg, #d1fae5, #a7f3d0)",
-    rotation: -10,
+    rotation: -5,
     x: 5,
-    y: 60,
-    scale: 1,
+    y: 65,
+    scale: 1.1,
   },
   {
-    id: "visionary",
-    label: "Visionary Engineer",
+    id: "operator",
+    label: "Startup Operator",
     emoji: "🚀",
-    color: "#ef4444",
+    color: "#ef4444", // Red
     bg: "linear-gradient(135deg, #fecaca, #fca5a5)",
     rotation: 15,
-    x: 80,
+    x: 82,
     y: 55,
     scale: 1.05,
   },
   {
-    id: "security-mindset",
-    label: "Security First",
-    emoji: "🔒",
-    color: "#f59e0b",
-    bg: "linear-gradient(135deg, #fef3c7, #fde68a)",
-    rotation: -20,
-    x: 42,
-    y: 72,
-    scale: 1,
-  },
-  {
-    id: "professor",
-    label: "Mentor",
-    emoji: "🎓",
-    color: "#ec4899",
-    bg: "linear-gradient(135deg, #fce7f3, #fbcfe8)",
-    rotation: 10,
-    x: 70,
-    y: 75,
-    scale: 0.9,
-  },
-  {
     id: "terminal",
-    label: "$ sudo AI",
+    label: "$ sudo ship_it",
     emoji: "⌨️",
-    color: "#6366f1",
+    color: "#6366f1", // Indigo
     bg: "linear-gradient(135deg, #e0e7ff, #c7d2fe)",
-    rotation: -8,
-    x: 20,
-    y: 30,
+    rotation: -2,
+    x: 25,
+    y: 35,
     scale: 1,
+  },
+{
+    id: "anti-ai-slop",
+    label: "Production Apps. Not AI Slop.", // Shortened slightly for better UI fit
+    emoji: "⚠️",
+    color: "#0f172a", // Deep slate/black text
+    bg: "linear-gradient(135deg, #fde047, #eab308)", // Sharp warning yellow
+    rotation: 6,
+    x: 75,
+    y: 25,
+    scale: 0.9, // Scaled down for a tighter, premium feel
   },
 ];
 
 // ── Achievements for Vision Board ──────────────────────────────────────────────
 
+// ── Achievements for Vision Board (The Proof) ──────────────────────────────────
+// This is the digital whiteboard. We are adding your specific hackathon wins, 
+// the patent, your enterprise stint, and your NYU credentials.
 export const achievements: Achievement[] = [
+  {
+    id: "hackathon-dominance",
+    type: "card", // Make this a massive, bold card
+    title: "The NYC Streak",
+    subtitle: "4 AI Hackathons. 4 Wins.",
+    description:
+      "Currently unbeaten in the New York City hackathon circuit. Consistently architecting and shipping winning AI infrastructure under extreme 24-48 hour time constraints against thousands of competitors.",
+    rotation: -2,
+    color: "#dc2626", // Aggressive Red
+    emoji: "🏆",
+    x: 35,
+    y: 5,
+  },
+  {
+    id: "chair-research",
+    type: "sticky",
+    title: "Patent Filed: Hardware + AI",
+    subtitle: "Back Position Chair Research",
+    description:
+      "Engineered an AI-based Modular Chair Positioning System. Applied deep learning and sensor fusion to track back positioning and dynamically adjust to human ergonomics in real-time.",
+    rotation: 4,
+    color: "#f59e0b", // Amber
+    emoji: "🪑",
+    x: 8,
+    y: 8,
+  },
+  {
+    id: "iterate-nyc",
+    type: "polaroid",
+    title: "Iterate NYC Hackathon",
+    subtitle: "1st Place Winner",
+    description:
+      "PitchPerfect: Architected a real-time voice processing system with custom audio buffers over WebSockets for a <200ms latency feedback loop.",
+    rotation: -5,
+    color: "#ec4899", // Pink
+    emoji: "🎙️",
+    x: 65,
+    y: 12,
+  },
   {
     id: "divhacks",
     type: "polaroid",
     title: "Columbia Divhacks 2025",
     subtitle: "1st Place Winner",
     description:
-      "Built an AI-powered Closet Assistant that uses computer vision to digitize your wardrobe and generate outfits using GPT-4V.",
-    rotation: -4,
-    color: "#3b82f6",
-    emoji: "🏆",
-    x: 5,
-    y: 5,
+      "Clovet: Built an AI-powered e-commerce virtual try-on and semantic search engine using the MERN stack and Gemini API.",
+    rotation: 6,
+    color: "#3b82f6", // Blue
+    emoji: "👕",
+    x: 40,
+    y: 55,
   },
+  // ... (keep Thunder Client, FitchGroup, and NYU ID)
   {
-    id: "patent",
-    type: "sticky",
-    title: "Patent Filed",
-    subtitle: "AI Chair Positioning",
+    id: "thunder-client",
+    type: "card",
+    title: "Thunder Client",
+    subtitle: "Core Engineer & Stakeholder",
     description:
-      "AI-based Modular Chair Positioning System — an intelligent ergonomic system that adapts seating configurations in real-time.",
-    rotation: 3,
-    color: "#f59e0b",
-    emoji: "📜",
-    x: 55,
-    y: 2,
-  },
-  {
-    id: "hsbc",
-    type: "badge",
-    title: "HSBC AI Hackathon",
-    subtitle: "Winner — Top of 4,700+",
-    description:
-      "Selected from over 4,700 participants globally. Built an AI-driven fraud detection pipeline with real-time anomaly scoring.",
-    rotation: -2,
-    color: "#ef4444",
-    emoji: "🎯",
-    x: 30,
+      "Architected core features for the world's leading API testing platform (10M+ installs). Built LLM-based doc synthesis, semantic search, and secure enterprise SSO.",
+    rotation: 2,
+    color: "#8b5cf6", // Violet
+    emoji: "⚡",
+    x: 10,
     y: 50,
   },
   {
-    id: "thunder",
-    type: "card",
-    title: "Thunder Client",
-    subtitle: "Stakeholder & Engineer",
+    id: "fitchgroup",
+    type: "sticky",
+    title: "FitchGroup Codeathon",
+    subtitle: "Runner Up",
     description:
-      "Core contributor to the popular VS Code REST API testing extension with 10M+ installs. Drove technical architecture decisions.",
-    rotation: 5,
-    color: "#8b5cf6",
-    emoji: "⚡",
-    x: 65,
-    y: 45,
+      "ESG Modeler: Tamed massive Pareto distribution data skew in financial datasets using a physics-constrained ensemble ML model.",
+    rotation: 8,
+    color: "#10b981", // Emerald
+    emoji: "📈",
+    x: 60,
+    y: 80,
   },
   {
-    id: "excellence",
-    type: "badge",
-    title: "2x Excellence Award",
-    subtitle: "Engineering Recognition",
+    id: "nyu-id",
+    type: "badge", // Design this specific badge to look like an ID card
+    title: "NYU Tandon",
+    subtitle: "MS Computer Engineering",
     description:
-      "Recognized for outstanding engineering contributions and technical leadership across multiple high-impact projects.",
-    rotation: -6,
-    color: "#10b981",
-    emoji: "⭐",
-    x: 8,
-    y: 55,
+      "Bridging the gap between raw algorithmic theory and high-level business execution in New York City.",
+    rotation: -4,
+    color: "#4f46e5", // Indigo
+    emoji: "🎓",
+    x: 75,
+    y: 48,
   },
 ];
 
