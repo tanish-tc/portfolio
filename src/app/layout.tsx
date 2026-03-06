@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tanish | Full-Stack Engineer & AI/ML Explorer",
+  title: "Tanish Vardhineni | Founding Engineer & AI/ML Systems Architect",
   description:
-    "The Hyper-Interactive Hacker Canvas — A physics-based, animation-heavy portfolio built with Next.js, Framer Motion, and TailwindCSS.",
+    "4x NYC Hackathon Champion. Founding Engineer of 10M+ install platform. Patent holder. Full-Stack + AI builder who ships production systems, not prototypes.",
   icons: {
     icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>",
   },

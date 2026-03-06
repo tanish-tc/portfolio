@@ -128,7 +128,8 @@ export default function Navigation() {
 
         {/* Resume Button */}
         <motion.a
-          href="#"
+          href="/resume.pdf"
+          download
           className={cn(
             "ml-1 rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200",
             scrolled

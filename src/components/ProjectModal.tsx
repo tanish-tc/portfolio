@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { type Project } from "@/lib/data";
 import { X, ArrowUpRight, ExternalLink } from "lucide-react";
@@ -12,6 +12,8 @@ export default function ProjectModal({
   project: Project;
   onClose: () => void;
 }) {
+  const [hasMedia, setHasMedia] = useState(true);
+
   // Escape key + body scroll lock
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -24,6 +26,11 @@ export default function ProjectModal({
       document.body.style.overflow = "";
     };
   }, [onClose]);
+
+  // Reset media state when project changes
+  useEffect(() => {
+    setHasMedia(true);
+  }, [project.id]);
 
   return (
     <motion.div
@@ -53,7 +60,7 @@ export default function ProjectModal({
       >
         {/* Close button */}
         <motion.button
-          className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/5 text-black/40 transition-colors hover:bg-black/10 hover:text-black"
+          className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white/70 transition-colors hover:bg-white/30 hover:text-white backdrop-blur-sm"
           onClick={onClose}
           whileHover={{ scale: 1.1, rotate: 90 }}
           whileTap={{ scale: 0.9 }}
@@ -63,7 +70,7 @@ export default function ProjectModal({
 
         {/* Escape hint */}
         <motion.div
-          className="absolute left-4 top-4 z-20 rounded-md bg-black/5 px-2 py-1 font-mono text-[10px] text-black/25"
+          className="absolute left-4 top-4 z-20 rounded-md bg-black/20 px-2 py-1 font-mono text-[10px] text-white/50 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -71,19 +78,32 @@ export default function ProjectModal({
           ESC to close
         </motion.div>
 
-        {/* Header gradient */}
+        {/* Header: Video/Gif or gradient fallback */}
         <div className="relative overflow-hidden rounded-t-3xl">
-          <div
-            className={`h-32 bg-gradient-to-br ${project.gradient}`}
-          >
-            {/* Dot pattern */}
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-              backgroundSize: "20px 20px",
-            }} />
-          </div>
+          {hasMedia ? (
+            <div className="relative aspect-[9/14] max-h-[50vh] w-full bg-black">
+              <img
+                src={`/gifs/${encodeURIComponent(project.id)}.gif`}
+                alt={`${project.title} demo`}
+                className="h-full w-full object-contain"
+                onError={() => setHasMedia(false)}
+              />
+              {/* Subtle bottom fade into content */}
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
+            </div>
+          ) : (
+            <div
+              className={`h-32 bg-gradient-to-br ${project.gradient}`}
+            >
+              {/* Dot pattern */}
+              <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+                backgroundSize: "20px 20px",
+              }} />
+            </div>
+          )}
 
-          {/* Category badge floating on gradient */}
+          {/* Category badge floating on header */}
           <motion.div
             className="absolute bottom-4 left-6 rounded-full bg-white/90 px-4 py-1.5 text-xs font-semibold text-black/60 shadow-lg backdrop-blur-sm"
             initial={{ opacity: 0, y: 10 }}

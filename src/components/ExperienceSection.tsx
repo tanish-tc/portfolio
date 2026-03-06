@@ -461,8 +461,7 @@ export default function ExperienceSection() {
           </motion.div>
         </div>
         <p className="mt-3 max-w-lg text-sm text-white/30">
-          From AI/ML research to full-stack engineering — a timeline of building,
-          shipping, and scaling impactful software.
+          Founding engineer, enterprise intern, grad researcher — every role involved shipping real product to real users under real constraints.
         </p>
       </motion.div>
 
@@ -506,7 +505,7 @@ export default function ExperienceSection() {
         transition={{ delay: 0.8 }}
       >
         <p className="font-mono text-xs text-white/20">
-          ...and counting. Always building, always learning.
+          ...and this is just the beginning. The best is yet to ship.
         </p>
       </motion.div>
     </section>

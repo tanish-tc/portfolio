@@ -77,7 +77,7 @@ function MagneticCTA() {
 // ── Infinite Marquee ───────────────────────────────────────────────────────────
 
 function InfiniteMarquee() {
-  const text = "LET'S CONNECT  ✦  FULL-STACK ENGINEER  ✦  AI/ML  ✦  OPEN SOURCE  ✦  ";
+  const text = "FOUNDING ENGINEER  ✦  10M+ USERS  ✦  4x HACKATHON CHAMPION  ✦  PATENT HOLDER  ✦  AI/ML + FULL-STACK  ✦  ";
   return (
     <div className="absolute inset-0 flex items-center overflow-hidden opacity-[0.02]">
       <div
@@ -128,12 +128,11 @@ export default function Footer() {
             Let&apos;s Build
             <br />
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
-              Something Great
+              What&apos;s Next
             </span>
           </h3>
           <p className="mx-auto mt-6 max-w-md text-sm text-white/30">
-            Always open to interesting projects, collaborations, and
-            opportunities. Let&apos;s talk.
+            Looking for a founding engineer who ships fast, thinks in systems, and doesn&apos;t need hand-holding? Let&apos;s talk.
           </p>
 
           {/* Magnetic CTA Button */}

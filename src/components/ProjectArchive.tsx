@@ -20,7 +20,6 @@ function ProjectCard({
   const [isHovered, setIsHovered] = useState(false);
   const [hasMedia, setHasMedia] = useState(true);
   const cardRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(cardRef, { once: true, margin: "-50px" });
 
   const heights = ["h-64", "h-80", "h-72", "h-96", "h-64", "h-80"];
   const height = heights[index % heights.length];
@@ -30,15 +29,11 @@ function ProjectCard({
       ref={cardRef}
       layoutId={`card-${project.id}`}
       className="group relative cursor-pointer break-inside-avoid mb-6"
-      initial={{ opacity: 0, y: 60, scale: 0.95 }}
-      animate={
-        isInView
-          ? { opacity: 1, y: 0, scale: 1 }
-          : { opacity: 0, y: 60, scale: 0.95 }
-      }
+      initial={{ opacity: 0, y: 30, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{
-        duration: 0.6,
-        delay: index * 0.08,
+        duration: 0.4,
+        delay: Math.min(index * 0.04, 0.3),
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       onHoverStart={() => setIsHovered(true)}
@@ -62,61 +57,60 @@ function ProjectCard({
             <img
               src={`/gifs/${encodeURIComponent(project.id)}.gif`}
               alt={`${project.title} preview`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               onError={() => setHasMedia(false)}
             />
           )}
         </div>
 
-        {/* Gradient background */}
+        {/* Gradient overlay: high opacity at top → transparent at bottom */}
         <div
-          className={cn(
-            "absolute inset-0 z-10 bg-gradient-to-br opacity-40 transition-opacity duration-500 group-hover:opacity-70",
-            project.gradient
-          )}
+          className="absolute inset-0 z-10 transition-opacity duration-500"
+          style={{
+            background: hasMedia
+              ? `linear-gradient(to bottom, ${project.color}dd 0%, ${project.color}99 30%, ${project.color}33 60%, transparent 100%)`
+              : undefined,
+          }}
         />
+        {/* Fallback gradient when no media */}
+        {!hasMedia && (
+          <div
+            className={cn(
+              "absolute inset-0 z-10 bg-gradient-to-br opacity-40 transition-opacity duration-500 group-hover:opacity-70",
+              project.gradient
+            )}
+          />
+        )}
 
-        {/* Content overlay */}
+        {/* Content overlay — text at top where overlay is opaque */}
         <div className="relative z-20 flex h-full flex-col justify-between p-6">
-          {/* Top: Category & Year */}
-          <div className="flex items-start justify-between">
-            <motion.span
-              className="rounded-full bg-black/20 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-white/50 backdrop-blur-sm"
-              animate={isHovered ? { y: 0, opacity: 1 } : { y: -5, opacity: 0.7 }}
-            >
-              {project.category}
-            </motion.span>
-            <motion.span
-              className="font-mono text-xs text-white/30"
-              animate={isHovered ? { opacity: 1 } : { opacity: 0.5 }}
-            >
-              {project.year}
-            </motion.span>
-          </div>
-
-          {/* Center: Large letter */}
-          <motion.div
-            className="flex items-center justify-center"
-            animate={isHovered ? { scale: 1.1, opacity: 0.1 } : { scale: 1, opacity: 0.08 }}
-            transition={{ duration: 0.4 }}
-          >
-            <span className="text-[120px] font-black leading-none text-white">
-              {project.title.charAt(0)}
-            </span>
-          </motion.div>
-
-          {/* Bottom: Title & Subtitle */}
+          {/* Top: Title, subtitle, metadata */}
           <div>
+            <div className="mb-3 flex items-start justify-between">
+              <motion.span
+                className="rounded-full bg-black/20 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-white/70 backdrop-blur-sm"
+                animate={isHovered ? { y: 0, opacity: 1 } : { y: 0, opacity: 0.8 }}
+              >
+                {project.category}
+              </motion.span>
+              <motion.span
+                className="font-mono text-xs text-white/50"
+                animate={isHovered ? { opacity: 1 } : { opacity: 0.7 }}
+              >
+                {project.year}
+              </motion.span>
+            </div>
+
             <motion.h3
               className="text-lg font-bold text-white sm:text-xl"
-              animate={isHovered ? { y: -4 } : { y: 0 }}
+              animate={isHovered ? { y: -2 } : { y: 0 }}
               transition={{ duration: 0.3 }}
             >
               {project.title}
             </motion.h3>
             <motion.p
-              className="mt-1 text-sm text-white/40"
-              animate={isHovered ? { y: -2, opacity: 1 } : { y: 0, opacity: 0.6 }}
+              className="mt-1 text-sm text-white/60"
+              animate={isHovered ? { y: -1, opacity: 1 } : { y: 0, opacity: 0.7 }}
               transition={{ duration: 0.3, delay: 0.05 }}
             >
               {project.subtitle}
@@ -132,23 +126,26 @@ function ProjectCard({
               {project.technologies.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/50 backdrop-blur-sm"
+                  className="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/60 backdrop-blur-sm"
                 >
                   {tech}
                 </span>
               ))}
               {project.technologies.length > 3 && (
-                <span className="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/50 backdrop-blur-sm">
+                <span className="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/60 backdrop-blur-sm">
                   +{project.technologies.length - 3}
                 </span>
               )}
             </motion.div>
           </div>
+
+          {/* Bottom: empty — video shows through transparent area */}
+          <div />
         </div>
 
         {/* Corner accent */}
         <motion.div
-          className="absolute right-4 top-4 h-8 w-8 rounded-full transition-all duration-300"
+          className="absolute right-4 bottom-4 h-8 w-8 rounded-full transition-all duration-300"
           style={{ backgroundColor: project.color }}
           animate={isHovered ? { scale: 1, opacity: 0.8 } : { scale: 0.5, opacity: 0 }}
         />
@@ -215,7 +212,7 @@ export default function ProjectArchive() {
           </h2>
           <div className="flex items-end gap-4">
             <h3 className="mt-2 font-mono text-4xl font-black tracking-tight text-white sm:text-5xl">
-              The Innovation Archive
+              The Full Arsenal
             </h3>
             <motion.span
               className="mb-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-white/30"
@@ -227,7 +224,7 @@ export default function ProjectArchive() {
             </motion.span>
           </div>
           <p className="mt-3 max-w-lg text-sm text-white/30">
-            Browse the full spectrum of my engineering journey—from ambitious prototypes to production systems at scale. Each project is a story of technical rigor, creative vision, and real-world impact.
+            Every project here was built, shipped, and battle-tested. From enterprise SaaS to AI agents to IoT edge systems — this is the full stack, no fluff.
           </p>
         </motion.div>
 
@@ -263,31 +260,21 @@ export default function ProjectArchive() {
           ))}
         </motion.div>
 
-        {/* Masonry Grid (CSS grid, no overlap) */}
-        <motion.div
-          className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          style={{ gridAutoFlow: 'row dense' }}
-          layout
+        {/* Masonry layout using CSS columns */}
+        <div
+          className="relative z-10 columns-1 sm:columns-2 lg:columns-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, idx) => (
-              <motion.div
+              <ProjectCard
                 key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-              >
-                <ProjectCard
-                  project={project}
-                  index={idx}
-                  onSelect={setSelectedProject}
-                />
-              </motion.div>
+                project={project}
+                index={idx}
+                onSelect={setSelectedProject}
+              />
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </section>
 
       {/* Modal */}

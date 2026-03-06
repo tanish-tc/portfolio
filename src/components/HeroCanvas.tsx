@@ -164,10 +164,10 @@ function MagneticTitle({
 
 function TypingSubtitle() {
   const roles = [
-    "AI Architect & Innovator",
-    "Full Stack Visionary",
-    "Mentor & Technical Leader",
-    "Systems Thinker",
+    "Founding Engineer @ 10M+ Install Platform",
+    "4x NYC Hackathon Champion",
+    "Patent-Holding AI Systems Architect",
+    "Full-Stack + AI/ML Builder",
   ];
   const [roleIdx, setRoleIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
@@ -290,7 +290,7 @@ export default function HeroCanvas() {
               <span className="absolute inset-0 animate-ping rounded-full bg-green-500 opacity-75" />
             </span>
             <span className="text-black/60">
-              <span className="text-green-600 font-semibold">~</span> available for world-class impact
+              <span className="text-green-600 font-semibold">~</span> open to founding / early-stage roles
             </span>
           </motion.div>
 
@@ -318,8 +318,8 @@ export default function HeroCanvas() {
           {/* Professor-level intro */}
           <div className="mx-auto mt-8 max-w-2xl text-base md:text-lg text-neutral-700 dark:text-neutral-300" >
             <span style={{ fontWeight: 100 }}>
-              Welcome — I’m Tanish, your next transformative hire. Architect of intelligent systems. Builder of seamless, scalable products. Leader in AI and Full Stack innovation.<br /><br />
-              My work fuses deep technical mastery with creative vision, delivering solutions that redefine what’s possible. If you seek a developer who elevates teams, mentors peers, and engineers the future—let’s connect.
+              I don&apos;t just write code — I ship production systems that scale to millions. Founding engineer of a 10M+ install developer tool. 4-0 unbeaten in NYC hackathons. Patent holder in AI + hardware. NYU Tandon CS grad.<br /><br />
+              I build the things other engineers talk about building. If you need someone who can architect, execute, and ship at startup speed — you found him.
             </span>
           </div>
 
@@ -372,8 +372,8 @@ export default function HeroCanvas() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
       >
-        <div>© 2025</div>
-        <div>v2.0.0</div>
+        <div>© 2026</div>
+        <div>v3.0.0</div>
       </motion.div>
     </section>
   );

@@ -215,7 +215,7 @@ export default function TechStack() {
       </motion.div>
 
       {/* Columns grid */}
-      <div className="relative z-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="relative z-10 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
         {categories.map(([category, skills], catIdx) => (
           <motion.div
             key={category}
@@ -225,27 +225,15 @@ export default function TechStack() {
           >
             {/* Category header */}
             <div className="mb-6">
-              <div className="flex items-center gap-3">
-                <h4
-                  className="text-lg font-bold"
-                  style={{
-                    background: `linear-gradient(135deg, ${skills[0]?.color || "#fff"}, ${skills[1]?.color || "#fff"})`,
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
+              <div className="flex items-center justify-between">
+                <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-white/40">
                   {category}
                 </h4>
-                <span className="rounded-full bg-white/5 px-2 py-0.5 font-mono text-[10px] text-white/20">
+                <span className="font-mono text-[10px] text-white/15">
                   {skills.length}
                 </span>
               </div>
-              <div
-                className="mt-2 h-[2px] w-12 rounded-full"
-                style={{
-                  background: `linear-gradient(90deg, ${skills[0]?.color || "#fff"}, transparent)`,
-                }}
-              />
+              <div className="mt-3 h-px w-full bg-white/[0.06]" />
             </div>
 
             {/* Skill pills */}

@@ -13,6 +13,22 @@ import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from
 
 const AUTO_PLAY_INTERVAL = 6000;
 
+// ── Featured Media (loads gif for carousel) ────────────────────────────────────
+function FeaturedMedia({ projectId }: { projectId: string }) {
+  const [hasMedia, setHasMedia] = useState(true);
+
+  if (!hasMedia) return null;
+
+  return (
+    <img
+      src={`/gifs/${encodeURIComponent(projectId)}.gif`}
+      alt="Project preview"
+      className="absolute inset-0 z-[1] h-full w-full object-cover opacity-40"
+      onError={() => setHasMedia(false)}
+    />
+  );
+}
+
 export default function FeaturedWork() {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -95,11 +111,11 @@ export default function FeaturedWork() {
           viewport={{ once: true }}
         >
           <h2 className="font-mono text-sm uppercase tracking-[0.3em] text-white/30">
-            // flagship creations
+            // flagship builds
           </h2>
           <div className="flex items-end justify-between">
             <h3 className="font-mono text-4xl font-black tracking-tight text-white sm:text-5xl">
-              Engineering the Future
+              Shipped. Not Theoretical.
             </h3>
             <div className="mb-1 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5">
               <span className="font-mono text-lg font-bold text-white/60">
@@ -109,7 +125,7 @@ export default function FeaturedWork() {
             </div>
           </div>
           <p className="mt-3 max-w-lg text-sm text-white/30">
-            Explore a handpicked selection of my most transformative projects—each a testament to technical excellence, creative problem-solving, and measurable impact. These are not just builds; they are blueprints for the future.
+            These aren&apos;t side projects — they&apos;re production systems, patent filings, and hackathon-winning architectures built under extreme constraints and shipped to real users.
           </p>
         </motion.div>
 
@@ -268,7 +284,7 @@ export default function FeaturedWork() {
                     </div>
                   </div>
 
-                  {/* Project gradient placeholder */}
+                  {/* Project visual with gif/video */}
                   <div
                     className={cn(
                       "relative flex h-64 items-center justify-center overflow-hidden bg-gradient-to-br sm:h-80 lg:h-96",
@@ -281,26 +297,8 @@ export default function FeaturedWork() {
                       backgroundSize: "24px 24px",
                     }} />
 
-                    <motion.div
-                      className="text-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <motion.div
-                        className="text-8xl font-black text-white/20"
-                        animate={{
-                          scale: [1, 1.05, 1],
-                          rotate: [0, 2, -2, 0],
-                        }}
-                        transition={{ repeat: Infinity, duration: 5 }}
-                      >
-                        {project.title.charAt(0)}
-                      </motion.div>
-                      <div className="mt-2 font-mono text-sm text-white/30">
-                        {project.year}
-                      </div>
-                    </motion.div>
+                    {/* Gif/video preview */}
+                    <FeaturedMedia projectId={project.id} />
                   </div>
                 </div>
 

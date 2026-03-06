@@ -52,7 +52,7 @@ export interface Sticker {
 export const stickers: Sticker[] = [
   {
     id: "nyc-streak",
-    label: "Unbeaten in NYC: 4 Wins",
+    label: "5-0 NYC Hackathon Record",
     emoji: "🗽",
     color: "#f59e0b", // Amber
     bg: "linear-gradient(135deg, #fef3c7, #fde68a)",
@@ -74,7 +74,7 @@ export const stickers: Sticker[] = [
   },
   {
     id: "operator",
-    label: "Startup Operator",
+    label: "10M+ Users Served",
     emoji: "🚀",
     color: "#ef4444", // Red
     bg: "linear-gradient(135deg, #fecaca, #fca5a5)",
@@ -94,16 +94,16 @@ export const stickers: Sticker[] = [
     y: 33,
     scale: 1,
   },
-{
+  {
     id: "anti-ai-slop",
-    label: "Production Apps. Not AI Slop.", // Shortened slightly for better UI fit
+    label: "Production Apps. Not AI Slop.",
     emoji: "⚠️",
     color: "#0f172a", // Deep slate/black text
     bg: "linear-gradient(135deg, #fde047, #eab308)", // Sharp warning yellow
     rotation: 6,
     x: 75,
     y: 25,
-    scale: 0.9, // Scaled down for a tighter, premium feel
+    scale: 0.9,
   },
 ];
 
@@ -117,9 +117,9 @@ export const achievements: Achievement[] = [
     id: "hackathon-dominance",
     type: "card", // Make this a massive, bold card
     title: "The NYC Streak",
-    subtitle: "4 AI Hackathons. 4 Wins.",
+    subtitle: "5 AI Hackathons. 5 Wins.",
     description:
-      "Currently unbeaten in the New York City hackathon circuit. Consistently architecting and shipping winning AI infrastructure under extreme 24-48 hour time constraints against thousands of competitors.",
+      "Currently 5-0 in the New York City hackathon circuit. Architecting and shipping winning AI infrastructure under extreme 24-48 hour time constraints against thousands of competitors. Not luck — systems.",
     rotation: -2,
     color: "#dc2626", // Aggressive Red
     emoji: "🏆",
@@ -172,7 +172,7 @@ export const achievements: Achievement[] = [
     title: "Thunder Client",
     subtitle: "Core Engineer & Stakeholder",
     description:
-      "Architected core features for the world's leading API testing platform (10M+ installs). Built LLM-based doc synthesis, semantic search, and secure enterprise SSO.",
+      "Architected core features for the world's leading API testing platform (10M+ installs). Built LLM-based doc synthesis, semantic search, and secure enterprise SSO. Not a contributor — the founding engineer.",
     rotation: 2,
     color: "#8b5cf6", // Violet
     emoji: "⚡",
