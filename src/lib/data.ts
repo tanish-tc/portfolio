@@ -266,7 +266,6 @@ export const featuredProjects: Project[] = [
 // ── Archive Projects (for the grid) ────────────────────────────────────────────
 
 export const archiveProjects: Project[] = [
-
   {
     id: "thunder-client-docs",
     title: "Thunder Client Official Documentation",
@@ -274,78 +273,76 @@ export const archiveProjects: Project[] = [
     year: "2024",
     category: "Open Source",
     description:
-      "Engineered the official documentation platform for Thunder Client. Focused strictly on optimal Developer Experience (DX) and ultra-fast page loads. Implemented a statically generated architecture to handle complex markdown rendering, ensuring the thousands of developers using the tool have instantaneous access to API testing guidelines.",
-    technologies: ["Next.js", "MDX", "Static Site Generation (SSG)", "Developer Experience"],
+      "Engineered the official documentation platform for Thunder Client. Focused strictly on optimal Developer Experience (DX) and ultra-fast page loads. Implemented a statically generated architecture to handle complex markdown rendering, ensuring the 10M+ developers using the tool have instantaneous access to API testing guidelines.",
+    technologies: ["Next.js", "TypeScript", "MDX", "Static Site Generation (SSG)", "TailwindCSS"],
     gradient: "from-purple-500 to-violet-900",
     color: "#a855f7",
     links: [
-      { label: "VS Code Marketplace", url: "#" },
-      { label: "GitHub", url: "#" },
+      { label: "VS Code Marketplace", url: "https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client" },
+      { label: "GitHub", url: "#" }, // <-- Add correct link here
     ],
   },
   {
     id: "ai-resume-builder",
     title: "Open-Source AI Resume Builder",
-    subtitle: "Open-Source AI Resume Generator",
+    subtitle: "Autonomous Resume Generation Engine",
     year: "2024",
     category: "Open Source",
     description:
-      "Built a privacy-first, open-source tool that programmatically designs and generates developer resumes. Integrated LLM APIs to dynamically rewrite and optimize bullet points based on target job descriptions, coupling prompt engineering with an automated PDF rendering engine.",
-    technologies: ["React", "LLM APIs", "Prompt Engineering", "PDF Generation"],
+      "Built a privacy-first, open-source tool that programmatically designs and generates developer resumes. Integrated LLM APIs to dynamically rewrite and optimize bullet points based on target job descriptions, coupling advanced prompt engineering with an automated, headless PDF rendering engine.",
+    technologies: ["React", "TypeScript", "Node.js", "LLM APIs", "Puppeteer/PDF Generation"],
     gradient: "from-green-500 to-emerald-900",
     color: "#10b981",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub (CareerCraft)", url: "https://github.com/tanish1608/CareerCraft-AI" },
+      { label: "GitHub (ResumeAI)", url: "https://github.com/tanish1608/ResumeAI" },
     ],
   },
-    {
+  {
     id: "love-arbitrage",
     title: "Love Arbitrage",
     subtitle: "Algorithmic Asymmetry Exploitation",
     year: "2024",
     category: "Data Science",
     description:
-      "Scraped and analyzed dating platform datasets to identify algorithmic inefficiencies, building a predictive matching model that exploits these data asymmetries.",
-    technologies: ["Python", "Data Scraping", "Predictive Modeling"],
+      "A purely data-driven approach to matchmaking. Scraped and analyzed dating platform datasets to identify algorithmic inefficiencies. Built a predictive matching model using Scikit-learn that exploits these data asymmetries, effectively treating human connection like a quantifiable arbitrage opportunity.",
+    technologies: ["Python", "Pandas", "Scikit-learn", "Data Scraping", "Predictive Modeling"],
     gradient: "from-rose-500 to-pink-900",
     color: "#f43f5e",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "https://github.com/ostsam/love-arbitrage.git" }, // <-- Add correct link here
     ],
   },
-
   {
     id: "self-improving-agent",
     title: "AI Self-Improving Backing Agent",
-    subtitle: "Autonomous Self-Reflecting AI Agent",
+    subtitle: "Autonomous Self-Reflecting AI",
     year: "2024",
     category: "AI Agents",
     description:
-      "Implemented a reinforcement architecture where a backend agent reviews its own execution traces, identifies failure points, and dynamically iterates its internal prompts to optimize its own logic.",
-    technologies: ["LLM Agents", "Reinforcement Learning", "Python"],
+      "Implemented a reinforcement architecture where a backend agent reviews its own execution traces, identifies failure points, and dynamically iterates its internal prompts. This self-healing loop optimizes its own logic over time without human intervention.",
+    technologies: ["Python", "LangChain", "LLM Agents", "Reinforcement Learning", "AST Parsing"],
     gradient: "from-indigo-500 to-blue-900",
     color: "#6366f1",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "https://github.com/tanish1608/ScriptCraft-Agent" }, 
     ],
   },
-    {
-      id: "connect2care",
-      title: "Connect2Care",
-      subtitle: "AI Hospital Management System",
-      year: "2025",
-      category: "Healthcare AI",
-      description:
-        "Designed and deployed an AI-driven hospital management system that streamlines patient care, resource allocation, and real-time analytics for large healthcare networks. Integrated predictive modeling for patient flow, automated triage, and intelligent scheduling, dramatically improving operational efficiency and patient outcomes. This platform is now supporting thousands of clinicians and patients across multiple hospitals.",
-      technologies: ["Flutter", "AI Workflow Automation", "Predictive Analytics", "Healthcare IT"],
-      gradient: "from-teal-500 to-cyan-900",
-      color: "#14b8a6",
-      links: [
-        { label: "Demo Video", url: "#" },
-        { label: "GitHub", url: "#" },
-      ],
-    },
-
+  {
+    id: "connect2care",
+    title: "Connect2Care",
+    subtitle: "AI Hospital Management System",
+    year: "2025",
+    category: "Healthcare AI",
+    description:
+      "Designed an AI-driven hospital management system that streamlines patient care and resource allocation. Integrated predictive modeling for patient flow, automated triage, and intelligent scheduling. Architected with strict compliance and data security in mind.",
+    technologies: ["Flutter", "Python", "Predictive Analytics", "Firebase/Supabase", "Healthcare IT"],
+    gradient: "from-teal-500 to-cyan-900",
+    color: "#14b8a6",
+    links: [
+      { label: "GitHub", url: "https://github.com/tanish1608/Connect2Care.git" }, // <-- Add correct link here
+    ],
+  },
   {
     id: "clovet",
     title: "Clovet",
@@ -353,30 +350,29 @@ export const archiveProjects: Project[] = [
     year: "2024",
     category: "Hackathon Runner Up",
     description:
-      "Built a semantic search engine powered by the Gemini API, implemented cross-platform scraping logic, and integrated an advanced Computer Vision Virtual Try-On feature directly into a full-stack e-commerce flow.",
-    technologies: ["MERN Stack", "Gemini API", "Computer Vision", "Web Scraping"],
+      "Built a semantic search engine powered by the Gemini API, implemented cross-platform scraping logic, and integrated an advanced Computer Vision Virtual Try-On feature directly into a full-stack e-commerce flow. Handled complex state management and asynchronous API calls seamlessly.",
+    technologies: ["React", "Node.js", "MongoDB", "Gemini API", "Computer Vision", "Web Scraping"],
     gradient: "from-pink-500 to-fuchsia-900",
     color: "#ec4899",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "https://github.com/tanish1608/clovet" },
     ],
   },
-    {
+  {
     id: "traffic-management",
     title: "Traffic Management System",
     subtitle: "YOLOv8 IoT Traffic Optimization",
     year: "2024",
     category: "IoT / Edge",
     description:
-      "Deployed YOLOv8 models via OpenCV to monitor intersection density in real-time, engineering fail-safe logic to override standard light timers and reduce idle wait times by 60%.",
-    technologies: ["YOLOv8", "OpenCV", "TensorFlow", "IoT / Edge"],
+      "Designed an edge-computing IoT system to dynamically manage traffic flow. Deployed YOLOv8 models via OpenCV to monitor intersection density in real-time. Engineered fail-safe logic to override standard light timers, reducing idle wait times by a measured 60%.",
+    technologies: ["Python", "YOLOv8", "OpenCV", "TensorFlow", "IoT / Edge Computing"],
     gradient: "from-lime-500 to-green-900",
     color: "#84cc16",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "https://github.com/tanish1608/AI-Traffic-Lights" },
     ],
   },
-
   {
     id: "buildbot-ai",
     title: "BuildBot AI",
@@ -384,28 +380,27 @@ export const archiveProjects: Project[] = [
     year: "2024",
     category: "AI Infrastructure",
     description:
-      "Engineered a local AI platform capable of generating complete Next.js/Node apps with custom syntax validation loops that force the LLM to test and repair its own output prior to delivery.",
-    technologies: ["React", "Node.js", "Llama 3.1", "Ollama"],
+      "Engineered a local, privacy-first AI platform capable of generating complete Next.js/Node apps. Built custom syntax validation loops that force the LLM to test and repair its own output prior to delivery, ensuring zero-hallucination, executable code.",
+    technologies: ["React", "Node.js", "Llama 3.1", "Ollama", "Docker", "Syntax Validation"],
     gradient: "from-blue-500 to-cyan-900",
     color: "#0ea5e9",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "https://github.com/tanish1608/AI-Developer" },
     ],
   },
-
-    {
+  {
     id: "fitchgroup-esg",
     title: "FitchGroup ESG Modeler",
     subtitle: "Financial Data Skew Normalization",
     year: "2024",
     category: "Fintech Hackathon",
     description:
-      "Solved extreme Pareto distribution skew in financial ESG datasets by building a 'physics-constrained' ensemble machine learning model, optimizing the data pipeline for enterprise-scale fintech environments.",
-    technologies: ["Python", "Pandas", "Ensemble Models", "Fintech"],
+      "Solved extreme Pareto distribution skew in financial ESG datasets by building a 'physics-constrained' ensemble machine learning model. Optimized the data engineering pipeline to normalize and predict across highly skewed data in enterprise-scale fintech environments.",
+    technologies: ["Python", "Pandas", "XGBoost", "Ensemble Models", "Data Engineering"],
     gradient: "from-yellow-500 to-amber-900",
     color: "#fbbf24",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub (Private)", url: "https://github.com/tanish1608/fitch-codeathon2025" },
     ],
   },
   {
@@ -415,13 +410,12 @@ export const archiveProjects: Project[] = [
     year: "2024",
     category: "AI Architecture",
     description:
-      "Engineered a dynamic, multi-agent simulation engine powered by the Gemini API. Bypassed standard chatbot limitations by implementing long-term vector memory (FAISS) for autonomous NPCs. Architected a mathematical semantic contradiction detection system that flags narrative divergences in real-time, tied directly to dynamic emotional state machines and ElevenLabs voice synthesis for procedural gameplay generation.",
-    technologies: ["FAISS Vector DB", "Gemini API", "State Machines", "ElevenLabs TTS", "Multi-Agent Systems"],
+      "Engineered a dynamic, multi-agent simulation engine powered by the Gemini API. Bypassed standard chatbot limitations by implementing long-term vector memory (FAISS) for autonomous NPCs. Architected a mathematical semantic contradiction detection system that flags narrative divergences in real-time.",
+    technologies: ["Python", "FAISS Vector DB", "Gemini API", "State Machines", "ElevenLabs TTS"],
     gradient: "from-slate-700 to-black",
     color: "#64748b",
     links: [
-      { label: "GitHub", url: "#" },
-      { label: "Architecture Demo", url: "#" },
+      { label: "GitHub", url: "#" }, // <-- Add correct link here
     ],
   },
   {
@@ -431,13 +425,12 @@ export const archiveProjects: Project[] = [
     year: "2024",
     category: "Full Stack SaaS",
     description:
-      "Architected a serverless, zero-touch publishing pipeline for Instagram. Engineered secure OAuth token lifecycle management and orchestrated database-level cron jobs (pg_cron) to trigger Supabase Edge Functions. The system autonomously generates context-aware content via LLMs and executes scheduled Graph API mutations without human intervention, scaling effortlessly across multi-tenant environments.",
-    technologies: ["Supabase Edge Functions", "pg_cron", "Instagram Graph API", "React", "OAuth Security"],
+      "Architected a serverless publishing pipeline for Instagram. Engineered secure OAuth token lifecycle management and orchestrated database-level cron jobs (pg_cron) to trigger Supabase Edge Functions. Autonomously generates context-aware content and executes Graph API mutations.",
+    technologies: ["React", "TypeScript", "Supabase Edge Functions", "pg_cron", "Instagram Graph API"],
     gradient: "from-violet-600 to-purple-900",
     color: "#8b5cf6",
     links: [
-      { label: "Live App", url: "#" },
-      { label: "GitHub", url: "#" },
+      { label: "GitHub (Private)", url: "https://github.com/tanish1608/ai-insta-spark" },
     ],
   },
   {
@@ -447,12 +440,12 @@ export const archiveProjects: Project[] = [
     year: "2023",
     category: "Web Platforms",
     description:
-      "Built a high-performance property platform capable of handling complex geographical datasets (KML/GeoJSON). Integrated Mapbox with custom rendering logic to display dense property markers without dropping frames. Managed complex client-side state with Zustand and ensured absolute data consistency via real-time WebSocket synchronization through Supabase.",
+      "Built a high-performance property platform capable of handling complex geographical datasets (KML/GeoJSON). Integrated Mapbox with custom rendering logic to display dense property markers without dropping frames. Managed complex client-side state with Zustand and ensured data consistency via Supabase.",
     technologies: ["React", "TypeScript", "Zustand", "Mapbox", "Supabase Realtime"],
     gradient: "from-sky-500 to-blue-900",
     color: "#0ea5e9",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "https://github.com/tanish1608/FullStack-realestate-platform" },
     ],
   },
   {
@@ -462,16 +455,15 @@ export const archiveProjects: Project[] = [
     year: "2023",
     category: "Data Analytics",
     description:
-      "Developed a robust biometric telemetry tracking system. Bypassed simple data logging by engineering an analytical layer that processes raw user fitness metrics to generate predictive insights and personalized recommendations. Implemented strict Row Level Security (RLS) in the database to ensure absolute privacy of sensitive health data at scale.",
-    technologies: ["React", "Vite", "Supabase RLS", "Predictive Analytics"],
+      "Developed a robust biometric telemetry tracking system. Engineered an analytical layer that processes raw user fitness metrics to generate predictive insights and personalized recommendations. Implemented strict Row Level Security (RLS) in the database to ensure absolute privacy of sensitive health data.",
+    technologies: ["React", "TypeScript", "Vite", "Supabase RLS", "Predictive Analytics"],
     gradient: "from-emerald-500 to-teal-900",
     color: "#10b981",
     links: [
-      { label: "GitHub", url: "#" },
+      { label: "GitHub", url: "https://github.com/tanish1608/Fitmapp-website" },
     ],
   },
 ];
-
 // ── Tech Stack ─────────────────────────────────────────────────────────────────
 
 export const techStack: Record<string, Skill[]> = {
@@ -479,44 +471,42 @@ export const techStack: Record<string, Skill[]> = {
     { name: "React", color: "#61dafb" },
     { name: "Next.js", color: "#000000" },
     { name: "TypeScript", color: "#3178c6" },
-    { name: "JavaScript", color: "#f7df1e" },
     { name: "TailwindCSS", color: "#06b6d4" },
     { name: "Framer Motion", color: "#e10098" },
-    { name: "Figma", color: "#f24e1e" },
-    { name: "Storybook", color: "#ff4785" },
-    { name: "HTML5", color: "#e34f26" },
-    { name: "CSS3", color: "#1572b6" },
+    { name: "Zustand", color: "#764abc" },       // Added (Geo Estate)
+    { name: "Mapbox", color: "#000000" },        // Added (Geo Estate)
+    { name: "WebSockets", color: "#f39c12" },    // Added (PitchPerfect / Low Latency)
   ],
-  "Backend / AI": [
+  "Backend & Database": [
     { name: "Python", color: "#3776ab" },
-    { name: "FastAPI", color: "#009688" },
     { name: "Node.js", color: "#3c873a" },
     { name: "PostgreSQL", color: "#336791" },
+    { name: "Supabase", color: "#3ecf8e" },      // Critical (Marketique, Fitmapp, Geo Estate)
     { name: "Redis", color: "#dc382d" },
-    { name: "GraphQL", color: "#e10098" },
+    { name: "GraphQL & REST", color: "#e10098" },
+    { name: "Pandas", color: "#150458" },        // Added (FitchGroup / Data Skew)
+    { name: "C / C++", color: "#00599c" },       // Added (Hardware/Patent context)
+  ],
+  "AI & Machine Learning": [
     { name: "TensorFlow", color: "#ff6f00" },
     { name: "PyTorch", color: "#ee4c2c" },
-    { name: "OpenAI API", color: "#10a37f" },
-    { name: "LangChain", color: "#3b82f6" },
+    { name: "Vector DBs (FAISS)", color: "#10b981" }, // Critical (Project Argus / Thunder Client)
+    { name: "LLM Agents", color: "#a21caf" },    // Critical (Argus / Backing Agent)
+    { name: "OpenAI / Gemini", color: "#10a37f" },
+    { name: "SBERT", color: "#4f46e5" },         // Added (Thunder Client Semantic Search)
   ],
-  "DevOps / Systems": [
+  "DevOps & Architecture": [
     { name: "Docker", color: "#2496ed" },
-    { name: "Kubernetes", color: "#326ce5" },
     { name: "AWS", color: "#ff9900" },
-    { name: "GitHub Actions", color: "#2088ff" },
-    { name: "CI/CD", color: "#40b682" },
-    { name: "Infrastructure as Code", color: "#7b42bc" },
-  ],
-  "Other": [
+    { name: "CI/CD Pipeline", color: "#40b682" },
+    { name: "Edge Functions", color: "#8b5cf6" },// Critical (Marketique / Serverless)
     { name: "System Design", color: "#6366f1" },
-    { name: "Critical Thinking", color: "#8b5cf6" },
-    { name: "Problem Solving", color: "#10b981" },
-    { name: "Mentorship", color: "#f59e42" },
-    { name: "Open Source", color: "#24292f" },
-    { name: "LLMs", color: "#a21caf" },
     { name: "Distributed Systems", color: "#0ea5e9" },
+    { name: "Sensor Fusion", color: "#f59e0b" }, // Added (Patent context)
+    { name: "Row Level Security", color: "#ef4444" }, // Added (Fitmapp / DB Architecture)
   ],
 };
+
 
 // ── Navigation Links ───────────────────────────────────────────────────────────
 

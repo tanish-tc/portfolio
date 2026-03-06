@@ -14,12 +14,12 @@ import {
 const socials = [
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/tanish1608",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://linkedin.com/in/tanish00",
     icon: Linkedin,
   },
   {
@@ -29,7 +29,7 @@ const socials = [
   },
   {
     label: "Email",
-    href: "mailto:hello@tanish.dev",
+    href: "tv2291@nyu.edu",
     icon: Mail,
   },
 ];
