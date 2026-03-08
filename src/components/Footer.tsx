@@ -60,7 +60,7 @@ function MagneticCTA() {
   return (
     <motion.a
       ref={ref}
-      href="mailto:hello@tanish.dev"
+      href="mailto:tv2291@nyu.edu"
       className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition-all hover:gap-4 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
       style={{ x: springX, y: springY }}
       onMouseMove={handleMouseMove}
@@ -176,7 +176,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2 font-mono text-xs text-white/20">
             <Terminal size={14} />
-            <span>tanish.dev</span>
+            <span>tanish</span>
             <span className="text-white/10">|</span>
             <span>© {new Date().getFullYear()}</span>
           </div>

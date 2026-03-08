@@ -222,8 +222,8 @@ export const featuredProjects: Project[] = [
     gradient: "from-amber-500 to-orange-900",
     color: "#f59e0b",
     links: [
-      { label: "Patent Filing", url: "#" },
-      { label: "Research Paper", url: "#" },
+      { label: "Patent Paper", url: "https://drive.google.com/file/d/14zv354L4rxN7tlGnHmLvAFZ7DXxbMthc/view?usp=drive_link" },
+      { label: "Paper Drawings", url: "https://drive.google.com/file/d/1V1dNyRqPG7lfmoyAZoqwVQ9qxx2MaVIU/view?usp=drive_link" },
     ],
     featured: true,
   },
@@ -239,7 +239,7 @@ export const featuredProjects: Project[] = [
     gradient: "from-blue-700 to-indigo-900",
     color: "#2563eb",
     links: [
-      { label: "Demo Video", url: "#" },
+      { label: "Demo Video", url: "https://youtu.be/EBc8vjYuG8k" },
       { label: "GitHub", url: "#" },
     ],
     featured: true,
@@ -256,8 +256,8 @@ export const featuredProjects: Project[] = [
     gradient: "from-fuchsia-600 to-pink-700",
     color: "#d946ef",
     links: [
-      { label: "Demo Video", url: "#" },
-      { label: "GitHub", url: "#" },
+      { label: "Demo Video", url: "https://drive.google.com/file/d/1sfuL-6cLQliJSKc0nj9V6y3Gq6XkGpLG/view?usp=sharing" },
+      { label: "GitHub", url: "https://github.com/ostsam/pitch-perfect.git" },
     ],
     featured: true,
   },
@@ -310,7 +310,8 @@ export const archiveProjects: Project[] = [
     gradient: "from-rose-500 to-pink-900",
     color: "#f43f5e",
     links: [
-      { label: "GitHub", url: "https://github.com/ostsam/love-arbitrage.git" }, // <-- Add correct link here
+      { label: "GitHub", url: "https://github.com/ostsam/love-arbitrage.git" },
+      { label: "Demo Video", url: "https://youtu.be/SluHb71_hHQ" }
     ],
   },
   {
@@ -326,6 +327,7 @@ export const archiveProjects: Project[] = [
     color: "#6366f1",
     links: [
       { label: "GitHub", url: "https://github.com/tanish1608/ScriptCraft-Agent" }, 
+      { label: "Demo Video", url: "https://youtu.be/y5cTzpCWklo" },
     ],
   },
   {
@@ -356,6 +358,7 @@ export const archiveProjects: Project[] = [
     color: "#ec4899",
     links: [
       { label: "GitHub", url: "https://github.com/tanish1608/clovet" },
+      { label: "Demo Video", url: "https://youtu.be/yqatDL2aOX8" },
     ],
   },
   {
@@ -370,7 +373,8 @@ export const archiveProjects: Project[] = [
     gradient: "from-lime-500 to-green-900",
     color: "#84cc16",
     links: [
-      { label: "GitHub", url: "https://github.com/tanish1608/AI-Traffic-Lights" },
+      { label: "Paper", url: "https://www.loom.com/share/traffic-management-demo" },
+      { label: "GitHub", url: "https://github.com/tanish1608/AI-Traffic-Lights" }
     ],
   },
   {
@@ -400,7 +404,7 @@ export const archiveProjects: Project[] = [
     gradient: "from-yellow-500 to-amber-900",
     color: "#fbbf24",
     links: [
-      { label: "GitHub (Private)", url: "https://github.com/tanish1608/fitch-codeathon2025" },
+      { label: "GitHub", url: "https://github.com/tanish1608/fitch-codeathon2025" },
     ],
   },
   {
@@ -415,7 +419,7 @@ export const archiveProjects: Project[] = [
     gradient: "from-slate-700 to-black",
     color: "#64748b",
     links: [
-      { label: "GitHub", url: "#" }, // <-- Add correct link here
+      { label: "GitHub", url: "https://github.com/tanish-tc/project-argus.git" }, // <-- Add correct link here
     ],
   },
   {
@@ -450,8 +454,8 @@ export const archiveProjects: Project[] = [
   },
   {
     id: "fitmapp-telemetry",
-    title: "Fitmapp Biometrics",
-    subtitle: "Predictive Biometric Analytics Engine",
+    title: "Fitmapp",
+    subtitle: "AI Fitness Tracker & Analytics",
     year: "2023",
     category: "Data Analytics",
     description:
@@ -479,13 +483,15 @@ export const techStack: Record<string, Skill[]> = {
   ],
   "Backend & Database": [
     { name: "Python", color: "#3776ab" },
-    { name: "Node.js", color: "#3c873a" },
+    { name: "C / C++", color: "#00599c" },       // Added (Hardware/Patent context)
+    { name: "java", color: "#b07219" },  
+    { name: "Node.js", color: "#3c873a" },// Added (FitchGroup / Data Skew context)
+    { name: "MongoDB", color: "#47a248" },
     { name: "PostgreSQL", color: "#336791" },
     { name: "Supabase", color: "#3ecf8e" },      // Critical (Marketique, Fitmapp, Geo Estate)
     { name: "Redis", color: "#dc382d" },
     { name: "GraphQL & REST", color: "#e10098" },
     { name: "Pandas", color: "#150458" },        // Added (FitchGroup / Data Skew)
-    { name: "C / C++", color: "#00599c" },       // Added (Hardware/Patent context)
   ],
   "AI & Machine Learning": [
     { name: "TensorFlow", color: "#ff6f00" },
