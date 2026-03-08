@@ -5,7 +5,7 @@ import time
 
 # --- CONFIGURATION ---
 # Get your API key from Google AI Studio (it's free)
-genai.configure(api_key="AIzaSyB_t4n64RF-nUQsdaLLnlN5UHJWJM0Oy5I")
+genai.configure(api_key="")
 INPUT_FILE = "startups_list.xlsx"
 OUTPUT_FILE = "startups_list_with_emails.xlsx"
 
